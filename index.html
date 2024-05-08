@@ -16,7 +16,16 @@
             console.log(JSON.stringify(json))
         }
 
-        addEventListener('')
+        function handleEvent(eventName, eventData) { 
+            // Handle the event based on the eventName and eventData received from Android
+            console.log("Received event:", eventName, "Data:", eventData);
+            
+            // You can perform actions or update UI based on the event
+        }
+
+        function triggerEvent(eventName, eventData) {
+            window.webkit.messageHandlers.eventName.postMessage(eventData);
+        }
     </script>
 </body>
 </html>
