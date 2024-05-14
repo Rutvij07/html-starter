@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World Button</title>
 </head>
+
 <body>
     <button id="hello" onclick="sayHello()">Hello World</button>
 
     <script>
         const json = {
-          title:'Hiiii Hellooo'
+            title: 'Hiiii Hellooo'
         }
         function sayHello() {
             console.log(JSON.stringify(json))
         }
 
-        function handleEvent(eventName, eventData) { 
+        function handleEvent(eventName, eventData) {
             // Handle the event based on the eventName and eventData received from Android
             console.log("Received event:", eventName, "Data:", eventData);
-            
+
             // You can perform actions or update UI based on the event
         }
-        window.addEventListener('message', function(event) {
-            console.log(event);
-    if (event.data && event.data.type === 'iosMessage') {
-        // Handle message from iOS app
-        console.log('Received message from iOS:', event.data.message);
-        // Perform actions based on the message
-    }
-});
+        window.addEventListener('message', function (event) {
+            console.log('event ===>',event);
+            if (event.data && event.data.type === 'iosMessage') {
+                // Handle message from iOS app
+                console.log('Received message from iOS:', event.data.message);
+                // Perform actions based on the message
+            }
+        });
         // function triggerEvent(eventName, eventData) {
         //     window.webkit.messageHandlers.eventName.postMessage(eventData);
         // }
     </script>
 </body>
+
 </html>
