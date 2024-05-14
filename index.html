@@ -25,6 +25,7 @@
             if (event.data && event.data.type === 'iosMessage') {
                 // Handle message from iOS app
                 console.log(`Received message from iOS: ${event.data.type}`);
+                alert(`Received message from iOS: ${event.data.type}`)
                 // Perform actions based on the message
             }
         });
