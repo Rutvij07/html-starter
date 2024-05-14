@@ -14,17 +14,11 @@
         const json = {
             title: 'Hiiii Hellooo'
         }
-        function sayHello() {
+        function sayHello() { // message sending to IOS
             console.log(JSON.stringify(json))
         }
 
-        function handleEvent(eventName, eventData) {
-            // Handle the event based on the eventName and eventData received from Android
-            console.log("Received event:", eventName, "Data:", eventData);
-
-            // You can perform actions or update UI based on the event
-        }
-        window.addEventListener('click', function (event) {
+        window.addEventListener('click', function (event) { // message coming from IOS
             console.log(`event ===> ${JSON.stringify(event.data)}`);
             // console.log('event.data ===>',event.data);
             // console.log('event.data.message ===>',event.data.message);
