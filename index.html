@@ -22,10 +22,17 @@
             
             // You can perform actions or update UI based on the event
         }
-
-        function triggerEvent(eventName, eventData) {
-            window.webkit.messageHandlers.eventName.postMessage(eventData);
-        }
+        window.addEventListener('message', function(event) {
+            console.log(event);
+    if (event.data && event.data.type === 'iosMessage') {
+        // Handle message from iOS app
+        console.log('Received message from iOS:', event.data.message);
+        // Perform actions based on the message
+    }
+});
+        // function triggerEvent(eventName, eventData) {
+        //     window.webkit.messageHandlers.eventName.postMessage(eventData);
+        // }
     </script>
 </body>
 </html>
