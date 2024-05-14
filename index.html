@@ -25,10 +25,10 @@
             // You can perform actions or update UI based on the event
         }
         window.addEventListener('click', function (event) {
-            console.log('event ===>',event);
+            console.log('event ===>',JSON.stringify(event));
             if (event.data && event.data.type === 'iosMessage') {
                 // Handle message from iOS app
-                console.log('Received message from iOS:', event.data.message);
+                console.log('Received message from iOS:', JSON.stringify(event.data.message));
                 // Perform actions based on the message
             }
         });
