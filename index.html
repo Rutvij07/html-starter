@@ -9,6 +9,8 @@
 
 <body>
     <button id="hello" onclick="sayHello()">Hello World</button>
+    <button id="" onclick="back()">hit back</button>
+    <button id="" onclick="sayHello()">go to dashboard</button>
 
     <script>
         const json = {
@@ -16,6 +18,22 @@
         }
         function sayHello() { // message sending to IOS
             console.log(JSON.stringify(json))
+        }
+        function back() { // message sending to IOS
+            console.log(JSON.stringify({
+    type:"APP_ACTION",
+    payload:{
+        value:"back"
+    }
+}))}
+        function dashboard() { // message sending to IOS
+            console.log(JSON.stringify({
+    type:"LINK",
+    payload:{
+        value:"https://hdfc360.page.link/BizviewDashboard"
+    }
+}
+))
         }
 
         window.addEventListener('click', function (event) { // message coming from IOS
